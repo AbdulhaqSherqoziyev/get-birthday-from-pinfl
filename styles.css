@@ -1,0 +1,31 @@
+/* styles.css */
+:root{--bg:#0f1724;--card:#0b1220;--accent:#7dd3fc;--muted:#94a3b8}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#071023 0%, #08132a 50%);color:whitesmoke;margin:0;padding:32px}
+.card{width:960px;max-width:96%;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:18px;box-shadow:0 10px 30px rgba(2,6,23,0.7);border:1px solid rgba(255,255,255,0.03)}
+.title{margin:0 0 6px;font-size:28px;letter-spacing:0.2px}
+.lead{color:var(--muted);margin:0 0 18px}
+.file-drop{display:block;padding:22px;border:2px dashed rgba(125,211,252,0.12);border-radius:12px;text-align:center;cursor:pointer;transition:transform .18s ease,box-shadow .18s}
+.file-drop:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(13,42,72,0.35)}
+.file-drop input{display:none}
+.drop-text{font-size:16px;color:var(--muted)}
+.controls{display:flex;gap:12px;margin-top:14px}
+.btn{background:linear-gradient(90deg,var(--accent),#60a5fa);border:none;padding:10px 16px;border-radius:10px;color:#042;cursor:pointer;font-weight:600;box-shadow:0 6px 18px rgba(125,211,252,0.08);transition:transform .12s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(125,211,252,0.12)}
+.btn.disabled, .btn.disabled:hover{opacity:.5;pointer-events:none;transform:none}
+.preview{margin-top:18px;}
+.preview.hidden{display:none}
+#table-wrapper{max-height:360px;overflow:auto;border-radius:8px;padding:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)}
+table{border-collapse:collapse;width:100%}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.03);font-size:14px}
+th{position:sticky;top:0;background:rgba(2,6,23,0.6);backdrop-filter:blur(4px)}
+.foot{margin-top:14px;color:var(--muted);font-size:13px}
+
+/* small animation */
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(125,211,252,0.12)}70%{box-shadow:0 0 0 12px rgba(125,211,252,0)}100%{box-shadow:0 0 0 0 rgba(125,211,252,0)}}
+.file-drop:hover{animation:pulse 1.6s infinite}
+
+/* responsive */
+@media(max-width:520px){.card{padding:16px}.title{font-size:20px}}

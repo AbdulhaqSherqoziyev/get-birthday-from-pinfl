@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>PINFL → Birthdate</title>
+<link rel="stylesheet" href="styles.css">
+<!-- SheetJS (XLSX) CDN -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+<main class="card">
+<h1 class="title">PINFL → Tug'ilgan Sana</h1>
+
+
+<p class="lead">Excel faylni yuklang (bitta ustun — PINFL). Sayt avtomatik chiqaradi: <code>PINFL</code> va <code>Birthdate</code>.</p>
+
+
+<label class="file-drop" id="drop-area">
+<input type="file" id="file-input" accept=".xlsx,.xls,.csv" />
+<div class="drop-text">Faylni bu yerga torting yoki bosing</div>
+</label>
+
+
+<div class="controls">
+<button id="process-btn" class="btn" disabled>Faylni qayta ishlash</button>
+<a id="download-link" class="btn ghost disabled" download="pinfl_birthdates.xlsx">Natijani yuklab olish</a>
+</div>
+
+
+<section id="preview" class="preview hidden">
+<h2>Oldindan ko'rish</h2>
+<div id="table-wrapper"></div>
+</section>
+
+
+<footer class="foot">Automatik hisoblash: PINFL ning 2–7-raqamlarida `DDMMYY` saqlanadi.</footer>
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
