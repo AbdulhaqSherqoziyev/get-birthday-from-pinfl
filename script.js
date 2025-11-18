@@ -111,6 +111,18 @@ function parsePINFL(pinfl){
   const today = new Date();
   const thisYearBirthday = new Date(today.getFullYear(), month - 1, day);
 
+  // BUGUN tug'ilgan kuni => 0 kun
+  if (
+    today.getDate() === day &&
+    today.getMonth() === (month - 1)
+  ) {
+    return {
+      birth: `${String(day).padStart(2,'0')}.${String(month).padStart(2,'0')}.${fullYear}`,
+      gender,
+      daysLeft: 0
+    };
+  }
+
   let target;
   if (thisYearBirthday >= today) {
     target = thisYearBirthday;
